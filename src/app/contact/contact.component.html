@@ -1,0 +1,22 @@
+<h1>Contact Operations</h1>
+
+<form (ngSubmit)="create(data)">
+    <div class="form-field">
+        <label>Name:</label>
+        <input type="text" [(value)]="data.nome">
+    </div>
+    <div class="form-field">
+        <label>CPF:</label>
+        <input type="text" [(value)]="data.cpf">
+    </div>
+</form>
+
+<ul>
+    <li *ngFor="let item of items">
+        {{ item.nome }}
+        <button (click)="update(item.id, item)">Update</button>
+        <button (click)="delete(item.id)">Delete</button>
+    </li>
+</ul>
+
+<button (click)="read()">Reload</button>
